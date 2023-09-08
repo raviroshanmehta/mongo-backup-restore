@@ -24,6 +24,7 @@
     "@fastify/autoload": "^5.0.0",
     "@fastify/schedule": "^4.1.1",
     "@fastify/sensible": "^5.0.0",
+    "@fastify/static": "^6.11.0",
     "@fastify/view": "^8.0.0",
     "child_process": "^1.0.2",
     "ejs": "^3.1.9",

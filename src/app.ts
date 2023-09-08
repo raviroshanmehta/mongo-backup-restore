@@ -20,6 +20,9 @@ const app: FastifyPluginAsync<AppOptions> = async (
       root: join(__dirname, "src" ,"views")
     },
   });
+  fastify.register(require('@fastify/static'), {
+    root: join(__dirname, "../backups")
+  })
  
   // Do not touch the following lines
 

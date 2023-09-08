@@ -32,6 +32,10 @@ const root: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
     }
     reply.redirect('/')
   })
+  fastify.get('/download/:backupfile', async function (request: any, reply: any) {
+    const backupfile = request.params.backupfile as string;
+    return reply.sendFile(backupfile)
+  })
 }
 
 export default root;

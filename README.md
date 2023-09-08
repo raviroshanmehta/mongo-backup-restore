@@ -8,7 +8,6 @@
 
 #### TO DO
 
-- Download and delete backups from machine
 - Shift backups to remote storage
 
 

@@ -20,6 +20,9 @@
 					font-size: 3.5rem;
 				}
 			}
+			.table-striped{
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body class="d-flex flex-column h-100">
@@ -65,6 +68,8 @@
 										
 									</td>
 									<td>
+										<a href="/download/<%- files[i] %>">Download</a>
+										&nbsp;
 										<a href="/restore/<%- files[i] %>" onclick="return confirm('Are you sure ?')">Restore</a>
 										&nbsp;
 										<a href="/remove/<%- files[i] %>" onclick="return confirm('Are you sure ?')">Remove</a>
