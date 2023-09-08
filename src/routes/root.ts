@@ -12,11 +12,11 @@ const root: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
   })
   fastify.get('/backup', async function (request: any, reply: any) {
     fastify.dbBackup();
-    return { backup : true }
+    return { backup : true, message: 'Request processed. Please check your terminal for realtime status.' }
   })
   fastify.get('/restore/:backupfile', async function (request: any, reply: any) {
     fastify.dbRestore(request.params.backupfile as string);
-    return { restore : true }
+    return { restore : true, message: 'Request processed. Please check your terminal for realtime status.' }
   })
   fastify.get('/remove/:backupfile', async function (request: any, reply: any) {
     const backupfile = request.params.backupfile as string;

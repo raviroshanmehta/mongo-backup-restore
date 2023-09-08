@@ -30,7 +30,7 @@ export default fp<schedulerPluginOptions>(async (fastify) => {
     );
 
 	const db_backup_job = new SimpleIntervalJob({
-        runImmediately: true, //(isProd !== true)
+        runImmediately: false, //(isProd !== true)
         seconds: 1 * 24 * 60 * 60,
     }, db_backup);
     // console.log(db_backup_job);
