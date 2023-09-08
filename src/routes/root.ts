@@ -18,6 +18,20 @@ const root: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
     fastify.dbRestore(request.params.backupfile as string);
     return { restore : true }
   })
+  fastify.get('/remove/:backupfile', async function (request: any, reply: any) {
+    const backupfile = request.params.backupfile as string;
+    const backupPath = join(__dirname, "../../backups"); 
+    if(backupfile == 'all'){
+      const files = fs.readdirSync(backupPath);
+      files.shift();
+      files.forEach(function(file,i){
+        fs.unlinkSync(join(backupPath, file));
+      });
+    } else {
+      fs.unlinkSync(join(backupPath, backupfile));
+    }
+    reply.redirect('/')
+  })
 }
 
 export default root;
