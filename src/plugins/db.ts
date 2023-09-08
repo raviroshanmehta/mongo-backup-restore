@@ -44,7 +44,7 @@ export default fp<dbBackupPluginOptions>(async (fastify, opts) => {
     const configFile = join(__dirname, "../../conf.yaml");
     const backupPath = join(__dirname, "../../backups"); 
     
-    const archive = join(backupPath, backupFileName + '.gz');
+    const archive = join(backupPath, backupFileName);
     const restoreCommand = `mongorestore --config=${configFile} --archive=${archive} --gzip`;
     
     // const outDir = join(backupPath, backupFileName);
